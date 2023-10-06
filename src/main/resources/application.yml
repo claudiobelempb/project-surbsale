@@ -1,0 +1,31 @@
+logging:
+    level:
+        guru:
+            springframework:
+                controllers: ERROR
+        org:
+            flywaydb: ERROR
+            hibernate: ERROR
+            springframework: ERROR
+server:
+    port: 8080
+    servlet:
+        context-path: /api/v1
+spring:
+    application:
+        name: App Sales v2
+    config:
+        activate:
+            on-profile: ${APP_PROFILE:test}
+    mvc:
+        pathmatch:
+            matching-strategy: ANT_PATH_MATCHER
+    security:
+        oauth2:
+            client:
+                registration:
+                    jwtDuration: ${JWT_DURATION:86400}
+                    jwtSecret: ${JWT_SECRET:my-jwt-secret}
+                    uaa:
+                        clientId: ${CLIENT_ID:my-client-id}
+                        clientSecret: ${CLIENT_SECRET:my-client-secret}

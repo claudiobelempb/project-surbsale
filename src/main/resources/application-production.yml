@@ -1,0 +1,23 @@
+spring:
+    datasource:
+        driverClassName: org.postgresql.Driver
+        password: ${PGPASSWORD}
+        url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+        username: ${PGUSER}
+    environment: production
+    security:
+        oauth2:
+            client:
+                registration:
+                    jwtDuration: ${JWT_DURATION:86400}
+                    jwtSecret: ${JWT_SECRET:my-jwt-secret}
+                    uaa:
+                        clientId: ${CLIENT_ID:my-client-id}
+                        clientSecret: ${CLIENT_SECRET:my-client-secret}
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        open-in-view: false
+    sql:
+        init:
+            platform: postgres

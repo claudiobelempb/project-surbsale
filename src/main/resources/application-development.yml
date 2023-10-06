@@ -1,0 +1,33 @@
+spring:
+    datasource:
+        driverClassName: org.postgresql.Driver
+        password: 123456
+        url: jdbc:postgresql://localhost:5432/dbsale?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+        username: postgres
+    environment: development
+    security:
+        oauth2:
+            client:
+                registration:
+                    jwtDuration: ${JWT_DURATION:86400}
+                    jwtSecret: ${JWT_SECRET:my-jwt-secret}
+                    uaa:
+                        clientId: ${CLIENT_ID:my-client-id}
+                        clientSecret: ${CLIENT_SECRET:my-client-secret}
+    jpa:
+        hibernate:
+            ddl-auto: create
+        open-in-view: false
+        propertites:
+            hibernate:
+                ddl-auto: create
+                dialect: org.hibernate.dialect.PostgreSQL94Dialect
+                properties:
+                    hibernate:
+                        format_sql: true
+                        open-in-view: false
+                        show-sql: true
+        show-sql: true
+    sql:
+        init:
+            platform: postgres
