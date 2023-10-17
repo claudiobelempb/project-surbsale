@@ -1,7 +1,6 @@
 package br.com.surb.sale.modules.client.services.ipml;
 
 import static java.util.Objects.requireNonNull;
-
 import br.com.surb.sale.modules.client.dto.ClientDTO;
 import br.com.surb.sale.modules.client.dto.mapper.ClientMapper;
 import br.com.surb.sale.modules.client.infra.entities.Client;
@@ -10,17 +9,14 @@ import br.com.surb.sale.modules.client.services.ClientService;
 import br.com.surb.sale.shared.AppConstants.AppExceptionConstants;
 import br.com.surb.sale.shared.AppExeptions.AppExeptionsService.AppDataIntegrityViolationException;
 import br.com.surb.sale.shared.AppExeptions.AppExeptionsService.AppEntityNotFoundException;
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
 @NoArgsConstructor

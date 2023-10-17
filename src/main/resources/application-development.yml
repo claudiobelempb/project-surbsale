@@ -19,15 +19,23 @@ spring:
             ddl-auto: create
         open-in-view: false
         propertites:
+            javax:
+                persistence:
+                    schema-generation:
+                        scripts:
+                            action: create
+                            createTarget:
+                                create: sql
+                        createSource: metadata
             hibernate:
                 ddl-auto: create
                 dialect: org.hibernate.dialect.PostgreSQL94Dialect
-                properties:
-                    hibernate:
-                        format_sql: true
-                        open-in-view: false
-                        show-sql: true
-        show-sql: true
+                formatSql: true
+                openInView: false
+                showSql: true
+                hbm2ddl:
+                    delimiter: ;
+        showSql: true
     sql:
         init:
             platform: postgres

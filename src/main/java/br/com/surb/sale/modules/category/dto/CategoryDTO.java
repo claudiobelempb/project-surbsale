@@ -4,13 +4,13 @@ import br.com.surb.sale.shared.AppEnums.StatusEnums;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 public class CategoryDTO implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private Long categoryId;
-  private String code;
+  private UUID categoryId;
   private String name;
   private StatusEnums status;
   private Instant createdAt;
@@ -19,29 +19,21 @@ public class CategoryDTO implements Serializable {
   public CategoryDTO() {
   }
 
-  public CategoryDTO(Long categoryId, String code, String name, StatusEnums status, Instant createdAt, Instant updatedAt) {
+  public CategoryDTO(UUID categoryId, String name, StatusEnums status, Instant createdAt,
+                     Instant updatedAt) {
     this.categoryId = categoryId;
-    this.code = code;
     this.name = name;
     this.status = status;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
 
-  public Long getCategoryId() {
+  public UUID getCategoryId() {
     return categoryId;
   }
 
-  public void setCategoryId(Long categoryId) {
+  public void setCategoryId(UUID categoryId) {
     this.categoryId = categoryId;
-  }
-
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
   }
 
   public String getName() {

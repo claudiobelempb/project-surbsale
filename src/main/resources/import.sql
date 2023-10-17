@@ -38,3 +38,12 @@ INSERT INTO tb_category (code, name, created_at, status) VALUES ('be6caa0c-48b2-
 INSERT INTO tb_category (code, name, created_at, status) VALUES ('be6caa0c-48b2-4456-90e0-612e485810d1', 'Carro', now(), 'ENABLED');
 INSERT INTO tb_category (code, name, created_at, status) VALUES ('be6caa0c-48b2-4456-90e0-612e485810d1', 'Lazer', now(), 'ENABLED');
 INSERT INTO tb_category (code, name, created_at, status) VALUES ('be6caa0c-48b2-4456-90e0-612e485810d1', 'Estudos', now(), 'ENABLED');
+
+--tb_room
+INSERT INTO tb_room (code, name, seats, created_at, active ) VALUES('fd1616cf-38b2-40d0-8241-96ebd303435d', 'Room 01', 6, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96ebd374435d', 'Room 02', 3, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96eb2303435d', 'Room 03', 2, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96e89303435d', 'Room 04', 7, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96e54308735d', 'Room 05', 6, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96ebd301235d', 'Room 06', 7, NOW(), 1);
+INSERT INTO tb_room (code, name, seats, created_at, active) VALUES('fd1616cf-38b2-40d0-8241-96ebd305435d', 'Room 07', 8, NOW(), 1);

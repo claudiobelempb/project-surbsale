@@ -11,17 +11,18 @@ servers:
 tags:
   - name: Rooms
 paths:
-  /rooms/id:
+  /rooms/{roomId}:
     get:
       tags:
         - Rooms
-      description: The number of extension points.
-      summary: Return rooms
-      operationId: handler
+      description: 'The number of extension points.'
+      summary: 'Return a room by ID'
+      operationId: execute
       parameters:
         - name: roomId
-          in: query
-          description: ID of the room
+          in: path
+          required: true
+          description: 'ID of the room'
           schema:
             type: integer
             format: int64
@@ -29,26 +30,26 @@ paths:
             roomId:
               value: 2
       responses:
-        '200':
-          description: OK
+        200:
+          description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Room'
+                $ref: '#/components/schemas/RoomDTO'
               example:
                 id: 1
-                code: 97b2393c-255a-4237-8eaf-56b8ab2597f7
+                code: '97b2393c-255a-4237-8eaf-56b8ab2597f7'
                 name: '#Room 1'
                 seats: 4
-        default:
-          description: Unexpected error
+        404:
+          description: 'Resource not found'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/AppStandarError'
 components:
   schemas:
-    Room:
+    RoomDTO:
       type: object
       properties:
         roomId:
@@ -60,14 +61,20 @@ components:
           type: string
         seats:
           type: integer
-    Error:
+    AppStandarError:
       type: object
       required:
         - code
         - message
       properties:
-        code:
+        timestamp:
+          type: string
+        status:
           type: integer
           format: int32
+        error:
+          type: string
         message:
+          type: string
+        path:
           type: string

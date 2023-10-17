@@ -22,7 +22,10 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
   private static final String[] PUBLIC = {
     "/oauth/token",
     "/h2-console/**",
-    "/swagger-ui/**"
+    "/v3/api-docs/**",
+    "/swagger-ui/**",
+    "/v2/api-docs/**",
+    "/swagger-resources/**"
   };
 
   private static final String[] PUBLIC_GET = {
