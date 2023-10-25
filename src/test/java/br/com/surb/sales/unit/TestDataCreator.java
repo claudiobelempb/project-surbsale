@@ -1,7 +1,7 @@
 package br.com.surb.sales.unit;
 
 import static br.com.surb.sales.unit.TestConstants.*;
-import br.com.surb.sale.modules.room.infra.entities.Room;
+import br.com.surb.sales.modules.room.infra.entities.Room;
 
 public final class TestDataCreator {
   private TestDataCreator(){}

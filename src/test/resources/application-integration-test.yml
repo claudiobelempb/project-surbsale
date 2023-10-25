@@ -1,0 +1,8 @@
+spring:
+    datasource:
+        driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+        url: jdbc:tc:postgresql://localhost/dbsale
+        password: admin
+        username: admin
+    main:
+        allow-bean-definition-overriding: true
